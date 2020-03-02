@@ -41,7 +41,7 @@ class Song
     genre.songs << self unless genre.songs.include?(self)
   end
   
-  def self.create
+  def self.create(name)
     song = new(name)
     song.save 
     song
