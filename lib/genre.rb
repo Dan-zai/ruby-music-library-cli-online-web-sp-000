@@ -26,8 +26,8 @@ class Genre
     self.class.all << self
   end 
   
-  def self.create
-    genre = self.new(name)
+  def self.create(name)
+    genre = new(name)
     genre.save 
     genre
   end 
