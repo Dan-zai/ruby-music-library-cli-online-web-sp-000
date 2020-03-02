@@ -1,16 +1,12 @@
 class MusicLibraryController
-  
   def initialize(path = "./db/mp3s")
-    
     MusicImporter.new(path).import
-    
   end
 
   def call
     input = ""
 
     while input != "exit"
-    
       puts "Welcome to your music library!"
       puts "To list all of your songs, enter 'list songs'."
       puts "To list all of the artists in your library, enter 'list artists'."
@@ -41,7 +37,7 @@ class MusicLibraryController
   end
 
   def list_songs
-    Song.all.sort{|a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
+    Song.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
       puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
     end
   end
