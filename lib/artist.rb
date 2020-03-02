@@ -24,11 +24,10 @@ class Artist
     self.class.all << self
   end 
   
-  def self.create
-    artist = self.new(name)
-    artist.save 
+  def self.create(name)
+    artist = new(name)
+    artist.save
     artist
-  end 
   
   def add_song(song)
     song.artist = self unless song.artist
